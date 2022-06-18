@@ -14,7 +14,11 @@ public class PersonService {
 	@Autowired
 	private PersonRepo repo;
 	
-	public List<Person> getAllPerson() {
+	public PersonService(PersonRepo repo) {
+		this.repo = repo;
+	}
+
+	public List<Person> getAllPersons() {
 		return this.repo.findAll();
 	}
 
